@@ -18,6 +18,11 @@ This repo doesn't contain Home Assistant config (no YAML, no `.storage/`). HA it
 - `/conventions` — audits the live HA instance against `CLAUDE.md` conventions (naming, icons, Hue groups, entity patterns), reports findings, logs them to `ISSUES.md` (`.claude/commands/conventions.md`).
 - `/issues` — lists open `ISSUES.md` entries and works through one interactively until resolved (`.claude/commands/issues.md`).
 - `/rename` — proposes a better name for a device/entity, checks consumers, then renames and patches them once approved (`.claude/commands/rename.md`).
+- `/verify` — runs the `ha-verify` testing loop against a change or a reported problem (`.claude/commands/verify.md`).
+
+## Skills
+
+- `ha-verify` — proposes acceptance criteria, sets up baseline state, has the user trigger real-world events, and asserts the outcome via live MCP queries. Auto-triggers after persistent config changes (before the changelog step) and standalone for debugging (`.claude/skills/ha-verify/SKILL.md`).
 
 ## Setup on a new machine
 

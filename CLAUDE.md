@@ -11,7 +11,8 @@ This file provides context for Claude Code when working with Ben Rowe's Home Ass
 - **No domain needs extra confirmation by default** (locks, alarm, cameras included) — treat all entities the same unless told otherwise for a specific case.
 - **If you notice an inconsistency, stale entity, or improvement opportunity while working on something else**, don't act on it — add it to `ISSUES.md` under a `TBD` entry instead. Only fix it if asked.
 - **When you have clarifying questions, ask them one at a time** rather than bundling several into a single multi-question prompt — easier to give granular feedback on one question before moving to the next.
-- **After any change that mutates server state** (the live HA instance — automations, helpers, entities, etc.), append an entry to `CHANGELOG.md` in the repo root.
+- **After any persistent config change**, run it through the `ha-verify` skill before logging it — propose acceptance criteria, set up baseline state, trigger it (with the user for real-world events), and assert the outcome via live MCP queries. Only proceed to the changelog step below once it passes. The same skill applies standalone when just debugging a reported problem, with no changelog step needed in that case.
+- **After any change that mutates server state** (the live HA instance — automations, helpers, entities, etc.), once verified, append an entry to `CHANGELOG.md` in the repo root.
 - **After any change to this repo's own files/structure** (CLAUDE.md, STATE.md, README.md, conventions — not the live HA instance), append an entry to `DOCS-CHANGELOG.md` instead.
 - Both changelogs use the same format:
 
