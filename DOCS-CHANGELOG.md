@@ -13,3 +13,4 @@ Log of changes to this repo's own files/structure (CLAUDE.md, STATE.md, README.m
 7. Added `ISSUES.md` for observations flagged during other work but not acted on (status starts `TBD`).
 8. Documented in `CLAUDE.md`: always search for consumers before touching any entity/automation (no staging environment); no entity domain gets extra confirmation by default; household context (cleaners fortnightly, pet sitters during holiday mode) explaining the holiday automations' purpose.
 9. Documented in `CLAUDE.md`'s Process section: ask clarifying questions one at a time rather than bundling several into one prompt.
+10. Added `/state` slash command (`.claude/commands/state.md`) to revalidate `STATE.md` against the live HA instance, correct drift in place (no new sections), flag unresolved findings in `ISSUES.md`, and log the run in this changelog. Added a "Available Commands" section to `README.md`.

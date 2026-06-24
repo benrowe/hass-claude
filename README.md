@@ -12,6 +12,10 @@ This repo doesn't contain Home Assistant config (no YAML, no `.storage/`). HA it
 - `DOCS-CHANGELOG.md` — log of changes to this repo's own files/structure (not the HA instance).
 - `ISSUES.md` — observations flagged during other work but not acted on; each starts `TBD` until reviewed.
 
+## Available Commands
+
+- `/state` — revalidates `STATE.md` against the live HA instance and corrects any drift (`.claude/commands/state.md`).
+
 ## Setup on a new machine
 
 1. Clone this repo.
