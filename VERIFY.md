@@ -1,0 +1,12 @@
+# Verify
+
+Home Assistant changes that needed verification (per the `ha-verify` skill / `CLAUDE.md`'s Process section) but couldn't be confirmed live at the time — usually because the test is gated by a real-world condition (time of day, physical presence, a sensor event) that wasn't true when the change was made. Each entry records what to verify, the acceptance criteria, and why it was blocked, so it isn't silently forgotten.
+
+Running `/verify` with no arguments works through the `Pending` entries below. Once confirmed, move the entry to `Verified` (with the date and outcome) rather than deleting it, so there's a record — matching `ISSUES.md`'s convention of updating status in place.
+
+## Pending
+
+- (2026-06-25, `automation.man_cave_toggle_off` "Mode: Man Cave Off") Fixed the condition that gates turning on backyard/kitchen lights when Man Cave switches off (was checking the disabled Hue groups `light.backyard`/`light.kitchen`; now checks the real per-fixture entities). Condition logic was verified via template eval against current light states, but the action itself only fires when `sun.sun` is `below_horizon` — it was daytime (`above_horizon`) when fixed, so the end-to-end branch hasn't fired live. **Acceptance criteria:** turn `input_boolean.man_cave` off after dusk, with `away_mode` off and all backyard/kitchen lights currently off → backyard area lights and kitchen area lights both turn on.
+- (2026-06-25, `automation.presence_arrival_lights` "Presence: Arrival Lights") Fixed conditions/action referencing the disabled Hue groups `light.living_room`/`light.dining_room` (now real entities `light.living_room_main`, `light.living_room_lamp`, `light.dining_room_main`). Untestable at fix time: needs both sunset (`sun.sun` after sunset) AND a real arrival event (person entering `zone.home`, then the front door opening within 5 minutes) — neither can be safely simulated. **Acceptance criteria:** arrive home after dusk with living room and dining room lights off, open the front door within 5 minutes of arrival → `script.adaptive_lights` fires on `light.living_room_main`, `light.living_room_lamp`, `light.dining_room_main`.
+
+## Verified

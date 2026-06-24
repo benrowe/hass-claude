@@ -12,6 +12,7 @@ This repo doesn't contain Home Assistant config (no YAML, no `.storage/`). HA it
 - `DOCS-CHANGELOG.md` — log of changes to this repo's own files/structure (not the HA instance).
 - `ISSUES.md` — observations flagged during other work but not acted on; each starts `TBD` until reviewed.
 - `IDEAS.md` — speculative, unscheduled ideas bigger than an `ISSUES.md` entry; not acted on unless asked.
+- `VERIFY.md` — pending `ha-verify` checks that couldn't be confirmed live yet (time-of-day/presence/physical-trigger gated), with acceptance criteria for when to retry.
 
 ## Available Commands
 

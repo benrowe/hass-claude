@@ -23,6 +23,16 @@ This skill is the same whether you just changed something or you're debugging a 
 
 5. **On failure: fix in place, then retest.** Diagnose using `ha_get_automation_traces`/`ha_get_logs`, adjust the config, and re-run the same test plan from step 2 (re-establish baseline first — don't assume it's still clean). Don't roll back the change automatically; the user can decide to abandon it if iteration isn't converging.
 
+## When the test is time-sensitive and can't run now
+
+Some acceptance criteria depend on a real-world condition that isn't true right now — sun position (`sun.sun` before/after sunset), someone being away/home, a season, a specific physical trigger you can't safely fake. If step 1-4 can't complete because of this, don't just drop it:
+
+1. Verify whatever *is* checkable now — e.g. evaluate the condition logic against current state via `ha_eval_template`, or confirm the action's target entities are real and valid — so you have partial confidence even without a live run.
+2. Log an entry to `VERIFY.md` under `Pending`: what was changed, what's already been checked, exactly why the live test is blocked, and the acceptance criteria for when it becomes testable again.
+3. Tell the user it's logged rather than silently leaving it unverified.
+
+When `/verify` is invoked with no argument, work through `VERIFY.md`'s `Pending` entries instead of asking what to test. When one passes, move it to `Verified` with the date and outcome.
+
 ## After the test
 
 - **If this followed a persistent config change**, only proceed to the `CHANGELOG.md` entry + commit (per `CLAUDE.md`'s Process section) once the test passes. The changelog should only ever describe verified behavior.
