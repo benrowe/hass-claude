@@ -1,6 +1,6 @@
 # CLAUDE.md - Home Assistant Setup
 
-This file provides context for Claude Code when working with Ben Rowe's Home Assistant instance. It holds durable conventions and policies — not a snapshot of current entities/automations/helpers, which would go stale and mislead. For a point-in-time inventory (entity/device counts, areas, integration device counts, full automation list, helpers, sensors, dashboards, key devices), see `STATE.md` — read it only when you need orientation, and never trust it over a live MCP query (`ha_search`, `ha_get_state`, `ha_get_entity`, etc.) for anything you're about to act on.
+This file provides context for Claude Code when working with this Home Assistant instance. It holds durable conventions and policies — not a snapshot of current entities/automations/helpers, which would go stale and mislead. For a point-in-time inventory (entity/device counts, areas, integration device counts, full automation list, helpers, sensors, dashboards, key devices), see `STATE.md` — read it only when you need orientation, and never trust it over a live MCP query (`ha_search`, `ha_get_state`, `ha_get_entity`, etc.) for anything you're about to act on.
 
 > **Maintenance:** After making changes to the HA setup (automations, helpers, integrations, areas, etc.), update `STATE.md` to reflect the current state. Update this file (`CLAUDE.md`) only when a convention, policy, or pattern changes.
 
@@ -33,7 +33,7 @@ This file provides context for Claude Code when working with Ben Rowe's Home Ass
 
 ## Household Context
 
-- **Cleaners** visit fortnightly while Ben/Carol are usually home — no automation impact.
+- **Cleaners** visit fortnightly while residents are usually home — no automation impact.
 - **Pet sitters** visit while `input_boolean.holiday_mode` is on (away). This is why holiday mode has front-door-triggered light automations (to assist the sitter) and alerts for doors opening / lights turning on unexpectedly — see `Holiday:`/`Alert: Holiday *` automations in `STATE.md`.
 
 ## Naming Convention

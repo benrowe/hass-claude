@@ -1,6 +1,6 @@
 # Changelog
 
-Log of changes made to Ben Rowe's Home Assistant instance.
+Log of changes made to this Home Assistant instance.
 
 ## 2026-06-24
 

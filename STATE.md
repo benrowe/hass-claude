@@ -1,6 +1,6 @@
 # STATE.md - Home Assistant Instance Snapshot
 
-Point-in-time inventory of Ben Rowe's Home Assistant instance. Not auto-loaded into context — read this file only when you need a quick orientation, and never trust it over a live MCP query. Counts and lists here can drift the moment someone adds/renames/removes something through the UI; if you're about to act on an entity/automation, verify it exists via `ha_search` / `ha_get_state` / `ha_get_entity` first.
+Point-in-time inventory of this Home Assistant instance. Not auto-loaded into context — read this file only when you need a quick orientation, and never trust it over a live MCP query. Counts and lists here can drift the moment someone adds/renames/removes something through the UI; if you're about to act on an entity/automation, verify it exists via `ha_search` / `ha_get_state` / `ha_get_entity` first.
 
 > **Maintenance:** After making changes to the HA setup (automations, helpers, integrations, areas, etc.), update this file to reflect the current state.
 
@@ -140,7 +140,7 @@ HA internals:
 - `input_boolean.away_mode` - Away from home
 - `input_boolean.bed_time` - Bedtime mode active
 - `input_boolean.entertainment_mode` - Entertainment mode active
-- `input_boolean.ben_s_ipad_in_use` - Tracks whether Ben's iPad is in use
+- `input_boolean.ben_s_ipad_in_use` - Tracks whether the iPad is in use
 
 ### Input Numbers
 - Speaker volumes (per room/device)

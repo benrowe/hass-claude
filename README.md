@@ -1,6 +1,6 @@
 # hass
 
-Claude Code context for Ben Rowe's Home Assistant instance.
+Claude Code context for a Home Assistant instance.
 
 This repo doesn't contain Home Assistant config (no YAML, no `.storage/`). HA itself is managed live via the [hass MCP server](.mcp.json) — Claude reads/writes entities, automations, helpers, etc. directly through it. This repo just holds the context Claude needs to do that well.
 
