@@ -16,7 +16,7 @@ This repo doesn't contain Home Assistant config (no YAML, no `.storage/`). HA it
 
 - `/state` — revalidates `STATE.md` against the live HA instance and corrects any drift (`.claude/commands/state.md`).
 - `/conventions` — audits the live HA instance against `CLAUDE.md` conventions (naming, icons, Hue groups, entity patterns), reports findings, logs them to `ISSUES.md` (`.claude/commands/conventions.md`).
-- `/issue` — lists open `ISSUES.md` entries and works through one interactively until resolved (`.claude/commands/issue.md`).
+- `/issues` — lists open `ISSUES.md` entries and works through one interactively until resolved (`.claude/commands/issues.md`).
 
 ## Setup on a new machine
 
