@@ -1,6 +1,6 @@
 # Issues
 
-Observations flagged while working on something else — not acted on unless asked. Every entry starts as `TBD`; update the status once reviewed (e.g. `Fixed`, `Won't fix`, `Ignored`) rather than deleting the line, so there's a record.
+Observations flagged while working on something else — not acted on unless asked. Every entry starts as `TBD`. Once fixed, delete the line entirely — git history and `CHANGELOG.md`/`DOCS-CHANGELOG.md` already record what happened. If resolved as `Won't fix` or `Ignored` (no actual change made), update the line in place with that status prefix instead, since there's no other record of the decision.
 
 ## TBD
 
@@ -17,7 +17,6 @@ Observations flagged while working on something else — not acted on unless ask
 - (2026-06-24, `/conventions`) `binary_sensor.sensor_1` ("Kitchen Motion Sensor") — fully generic id, doesn't follow `binary_sensor.<area>_motion`.
 - (2026-06-24, `/conventions`) `binary_sensor.hue_outdoor_motion_sensor_1_motion` ("Backyard Sensor Motion") and `binary_sensor.hue_outdoor_motion_sensor_1_motion_2` ("Front Yard sensor Motion") — device-based ids instead of area-based, with a `_2` collision suffix.
 - (2026-06-24, `/conventions`) `sensor.hue_outdoor_motion_sensor_1_temperature`/`_temperature_2` and `_illuminance`/`_illuminance_2` — same device-based naming issue as the binary_sensor pair above (Backyard/Front Yard).
-- Fixed: (2026-06-24, `/conventions`) `sensor.51244436_01ea_4e6b_afd3_049e3ce3efd0_3_illuminance` ("Kitchen Motion Sensor Illuminance") — raw UUID as entity_id; worst naming offender found, good first-fix candidate. Renamed to `sensor.kitchen_illuminance` ("Kitchen Illuminance") on 2026-06-25; zero consumers found, nothing to patch.
 - (2026-06-25, `/issues`) While renaming the kitchen illuminance sensor, found that `binary_sensor.sensor_1`'s device ("Kitchen Motion Sensor", entities: `binary_sensor.sensor_1`, `sensor.sensor_1_battery_percentage`) has `area_id: entry`, not `kitchen` — despite the device/entity names. A second, separate device also named "Kitchen Motion Sensor" (holding `sensor.kitchen_illuminance`) is correctly assigned to `area_id: kitchen`. Confirm which area this physical sensor is actually in and fix the registry assignment (and possibly the naming, since two unrelated devices share the same name).
 - (2026-06-24, `/conventions`) `automation.front_door_motion_lights` ("Front Door: Motion Lights") — category prefix doesn't match its assigned area (`entry`). Worth a look.
 - (2026-06-24, `/conventions`) `automation.tag_man_cave_is_scanned` ("Man cave: Scanned") — lowercase "cave" inconsistent with "Man Cave" capitalization used elsewhere. Worth a look.
