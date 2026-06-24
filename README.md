@@ -11,6 +11,7 @@ This repo doesn't contain Home Assistant config (no YAML, no `.storage/`). HA it
 - `CHANGELOG.md` — log of changes made to the HA instance via Claude.
 - `DOCS-CHANGELOG.md` — log of changes to this repo's own files/structure (not the HA instance).
 - `ISSUES.md` — observations flagged during other work but not acted on; each starts `TBD` until reviewed.
+- `IDEAS.md` — speculative, unscheduled ideas bigger than an `ISSUES.md` entry; not acted on unless asked.
 
 ## Available Commands
 
