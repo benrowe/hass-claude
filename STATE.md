@@ -169,7 +169,6 @@ HA internals:
 - Kitchen
 - Man Cave
 - Outdoor areas
-- Pool area
 
 ### Smart Detection (Unifi Cameras)
 - Person detection

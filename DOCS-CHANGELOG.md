@@ -42,3 +42,4 @@ Log of changes to this repo's own files/structure (CLAUDE.md, STATE.md, README.m
 16. Added `/summary` slash command (`.claude/commands/summary.md`) — a read-only digest of open `ISSUES.md` entries and `IDEAS.md` headings, with a suggestion of what to tackle next. Updated `README.md`'s Available Commands list.
 17. Logged a new `ISSUES.md` entry: garage lights aren't turning on when the garage door opens, suspected to be related to a prior Hue group command change.
 18. Worked `ISSUES.md` backlog via `/issues`: deleted the resolved `Garage override:` naming entry and the garage-lights-bug entry (root cause found and fixed, verified live).
+19. Worked `ISSUES.md` backlog via `/issues`: removed the stale "Pool area" line from `STATE.md`'s Temperature & Illuminance list — no pool area or entity exists anywhere in this instance (checked exact + fuzzy search, all 14 areas). Deleted the resolved entry.
