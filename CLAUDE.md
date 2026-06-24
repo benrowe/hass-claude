@@ -4,6 +4,20 @@ This file provides context for Claude Code when working with Ben Rowe's Home Ass
 
 > **Maintenance:** After making changes to the HA setup (automations, helpers, integrations, areas, etc.), update this file to reflect the current state.
 
+## Process
+
+- **Before any persistent config change** (automations, scripts, scenes, helpers, dashboards, entities, areas, etc.), consult the `home-assistant-best-practices` skill ("Get Home Assistant Best Practices Skill Guide") and read the reference file(s) it points to for the task at hand.
+- **After any change that mutates server state**, append an entry to `CHANGELOG.md` in the repo root. Format:
+
+  ```
+  ## {year}-{month}-{day}
+
+  - {description}
+  ```
+
+  If today's date already has a section, append a new bullet under it rather than creating a new section. The changelog is chronological — new dates are added at the bottom.
+- **After updating `CHANGELOG.md`**, commit the change immediately (e.g. `git add CHANGELOG.md && git commit -m "..."`). Each mutation gets its own commit — keep history granular, don't batch multiple changes into one commit.
+
 ## Overview
 
 - **Entities:** 482
