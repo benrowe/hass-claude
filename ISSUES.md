@@ -4,7 +4,6 @@ Observations flagged while working on something else — not acted on unless ask
 
 ## TBD
 
-- (2026-06-24, `/state`) `STATE.md`'s Key Devices "Main TV" entity_id `media_player.living_room_tv_2` no longer exists. Live candidates are `media_player.living_room_tv_2_2` ("Living Room Sony TV", state `unavailable`) and `media_player.living_room` ("Living Room", state `off`). Confirm which is the real main TV and check for any automations/scripts/dashboards still referencing the old entity_id.
 - (2026-06-24, `/conventions`) 8 automations have no icon set at all: `automation.alert_meater_cook_started`, `automation.alert_meater_estimated_time_available`, `automation.away_mode_ac_off_response`, `automation.holiday_door_opened_timer_finished_lights_off`, `automation.holiday_front_door_opened_timer`, `automation.holiday_front_door_opens_lights_on`, `automation.kitchen_light_bar_on_with_no_motion`, `automation.kitchen_light_bar_turned_off`.
 - (2026-06-24, `/conventions`) `automation.away_mode_ac_off_response` ("Away Mode: AC Off Response") uses prefix `Away Mode:`, not one of the 7 documented categories.
 - (2026-06-24, `/conventions`) `light.coffee_machine`, `light.dehumidifier` — entity_ids have no area prefix, breaking the `light.<area>_<fixture>` pattern.

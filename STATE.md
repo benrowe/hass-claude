@@ -186,5 +186,5 @@ HA internals:
 
 ## Key Devices
 
-- **Main TV:** unconfirmed — `media_player.living_room_tv_2` (previously listed here) no longer exists. Live candidates: `media_player.living_room_tv_2_2` ("Living Room Sony TV", state `unavailable`) and `media_player.living_room` ("Living Room", state `off`). See `ISSUES.md`.
-- **Stale/disabled:** `media_player.living_room_tv` — also no longer found.
+- **Main TV:** `media_player.living_room_tv_2_2` ("Living Room Sony TV", Sony BRAVIA 4K AE2) — used by `Living Room: TV On`/`Off`. State `unavailable` reflects the TV being powered off, not a missing/broken entity.
+- **Note:** `media_player.living_room` ("Living Room") is a Bose Soundbar 700, not a TV — don't confuse it with the Main TV above.
