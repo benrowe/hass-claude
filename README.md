@@ -6,7 +6,9 @@ This repo doesn't contain Home Assistant config (no YAML, no `.storage/`). HA it
 
 ## Contents
 
-- `CLAUDE.md` — durable conventions and policies (naming, icons, automation patterns, integration quirks). Auto-loaded into context; kept free of point-in-time state so it can't go stale.
+- `CLAUDE.md` — durable process and policy (workflow rules, household context, automation patterns). Auto-loaded into context; kept free of point-in-time state so it can't go stale.
+- `CONVENTIONS.md` — opinionated naming/icon/entity-pattern conventions. Audited against the live instance via `/conventions`.
+- `GOTCHAS.md` — surprising technical quirks/integration behavior worth knowing before you hit them.
 - `STATE.md` — point-in-time inventory snapshot (entity/device counts, areas, automations, helpers, sensors, dashboards). Read on demand, not auto-loaded; never trusted over a live MCP query.
 - `CHANGELOG.md` — log of changes made to the HA instance via Claude.
 - `DOCS-CHANGELOG.md` — log of changes to this repo's own files/structure (not the HA instance).

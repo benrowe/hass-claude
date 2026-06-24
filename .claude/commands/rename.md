@@ -16,7 +16,7 @@ Help fix poorly-named devices/entities. Input is a device name/id or an `entity_
    - Other entities/templates that reference it (e.g. template sensors, groups)
 
    Use `ha_search` plus `ha_config_get_automation`/`ha_config_get_script`/`ha_config_get_scene`/`ha_config_get_dashboard` as needed. List every consumer found, even if the rename later turns out trivial.
-4. Propose a new `entity_id` (and friendly name, if it also needs fixing) following `CLAUDE.md`'s Naming Convention and Common Entity Patterns sections. Briefly explain why the current name is poor and why the new one fits.
+4. Propose a new `entity_id` (and friendly name, if it also needs fixing) following `CONVENTIONS.md`'s Naming Convention and Common Entity Patterns sections. Briefly explain why the current name is poor and why the new one fits.
 5. Present the proposed name plus the full consumer list to the user and ask for approval before changing anything. If the user wants a different name, iterate until approved.
 6. Once approved:
    - Rename the entity (and update the friendly name/icon if applicable) via `ha_set_entity`.
