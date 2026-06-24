@@ -4,7 +4,6 @@ Observations flagged while working on something else — not acted on unless ask
 
 ## TBD
 
-- (2026-06-24, `/state`) `Routine: Bedtime Start` was listed in `STATE.md` as an existing automation but doesn't exist live — only `automation.bedtime_routine_turn_off` ("Routine: Bedtime") was found. Confirm whether it was removed, renamed, or merged, and whether anything still expects it to exist.
 - (2026-06-24, `/state`) Three automations use a `Holiday:` prefix (`Holiday: Front Door Opens - Lights On`, `Holiday: Door Opened Timer Finished - Lights Off`, `Holiday: Front Door Opened Timer`) that isn't one of the 7 categories in `CONVENTIONS.md`'s Naming Convention. Decide whether to rename them into an existing category or formalize `Holiday` as an 8th category.
 - (2026-06-24, `/state`) `Garage override: On` / `Garage override: Off` use the prefix "Garage override:" rather than "Garage:", inconsistent with sibling Garage automations.
 - (2026-06-24, `/state`) `STATE.md`'s Sensors > Temperature & Illuminance lists a "Pool area" sensor, but no pool-related entity was found via `ha_search`. Confirm whether this is stale or just not discoverable by that search term.

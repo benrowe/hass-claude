@@ -81,8 +81,6 @@ Time-based or scheduled whole-house behaviors:
 - `Routine: Man Cave Dusk Adjust` - Adjust man cave lights to evening color temp at sunset
 - `Routine: Update Available` (`automation.alert_update_available`) - Weekly digest of available HA updates (Monday 7am, or on leaving home on Monday)
 
-> Note: `Routine: Bedtime Start` (previously listed here) no longer exists live — flagged in ISSUES.md.
-
 ### Mode (10 automations)
 State toggles affecting multiple systems:
 - `Mode: Driving On` / `Mode: Driving Off` - In-car mode with lighting changes
