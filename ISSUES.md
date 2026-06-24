@@ -4,7 +4,6 @@ Observations flagged while working on something else — not acted on unless ask
 
 ## TBD
 
-- (2026-06-24, `/state`) `Garage override: On` / `Garage override: Off` use the prefix "Garage override:" rather than "Garage:", inconsistent with sibling Garage automations.
 - (2026-06-24, `/state`) `STATE.md`'s Sensors > Temperature & Illuminance lists a "Pool area" sensor, but no pool-related entity was found via `ha_search`. Confirm whether this is stale or just not discoverable by that search term.
 - (2026-06-24, `/state`) `STATE.md`'s Key Devices "Main TV" entity_id `media_player.living_room_tv_2` no longer exists. Live candidates are `media_player.living_room_tv_2_2` ("Living Room Sony TV", state `unavailable`) and `media_player.living_room` ("Living Room", state `off`). Confirm which is the real main TV and check for any automations/scripts/dashboards still referencing the old entity_id.
 - (2026-06-24, `/conventions`) 8 automations have no icon set at all: `automation.alert_meater_cook_started`, `automation.alert_meater_estimated_time_available`, `automation.away_mode_ac_off_response`, `automation.holiday_door_opened_timer_finished_lights_off`, `automation.holiday_front_door_opened_timer`, `automation.holiday_front_door_opens_lights_on`, `automation.kitchen_light_bar_on_with_no_motion`, `automation.kitchen_light_bar_turned_off`.
@@ -22,4 +21,3 @@ Observations flagged while working on something else — not acted on unless ask
 - (2026-06-24, `/conventions`) `light.outdoor`, `light.outdoor_2`–`light.outdoor_5`, `light.outdoor_porch` — generic "outdoor" naming, ambiguous which physical area each belongs to. Worth a look.
 - (2026-06-24, `/conventions`) `binary_sensor.outdoor_sensor_motion`, `sensor.outdoor_sensor_temperature`, `sensor.outdoor_sensor_illuminance` — id says "outdoor" but friendly name/area is "Entry Porch". Worth a look (historical naming).
 - (2026-06-24, `/conventions`) `binary_sensor.hallway_motion` vs `binary_sensor.hallway_sensor_1_motion` (plus matching temperature/illuminance sensors) — two inconsistently-named hallway sensors; possibly one is redundant/legacy. Worth a look.
-- (2026-06-25, user report) Garage lights aren't turning on when the garage door opens. User suspects this is related to a prior Hue group command change (see `GOTCHAS.md` Hue Groups sync issues). Needs investigation — check the relevant automation, the Hue group entity's `disabled_by`/sync state, and whether the light entity used by the automation still resolves correctly.
