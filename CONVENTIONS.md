@@ -13,7 +13,7 @@ Opinionated naming/style conventions for this Home Assistant instance — entiti
 - **Automations:** Category prefix + trigger-based name. Actions may change over time; trigger-based names remain stable.
 - **Exceptions:** Entities/devices that aren't area-bound (e.g. `person.*`, `zone.*`, `update.*`, integration/hub diagnostic entities) don't need to fit the area-based pattern — name them for what they represent instead (e.g. `person.ben`, `update.hue_bridge_firmware`).
 
-#### Automation Categories (7 total)
+### Automation Categories (7 total)
 
 | Category | Prefix | Purpose |
 |----------|--------|---------|
@@ -25,7 +25,7 @@ Opinionated naming/style conventions for this Home Assistant instance — entiti
 | **Device** | `Device:` | Device-specific logic not tied to a room |
 | **System** | `System:` | HA internals, startup, integrations |
 
-#### Decision Rules
+### Decision Rules
 
 1. **Single room scope** → Use Room prefix (e.g., `Kitchen: Motion`, `Garage: Door Opens`)
 2. **Time/schedule based** → Use Routine prefix (e.g., `Routine: Morning`, `Routine: Dusk`)

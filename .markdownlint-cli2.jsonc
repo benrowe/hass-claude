@@ -1,0 +1,17 @@
+{
+  // Docs are prose-heavy context/log files, not API references — relax
+  // rules that fight the project's established writing style rather than
+  // catching real mistakes.
+  "config": {
+    "default": true,
+    "MD013": false, // line-length: prose isn't hard-wrapped at 80 cols
+    "MD022": false, // blanks-around-headings: headings are immediately followed by their list/content throughout
+    "MD032": false, // blanks-around-lists: lists directly follow a heading/lead-in sentence throughout
+    "MD036": false, // no-emphasis-as-heading: bold used as an intentional sub-label in lists (e.g. CONVENTIONS.md icon table)
+    "MD040": false, // fenced-code-language: the changelog-format example fence in CLAUDE.md is a plain-text template, not code
+    "MD060": false, // table-column-style: conflicts with existing table formatting repo-wide
+    "MD010": { "code_blocks": false }
+  },
+  "globs": ["**/*.md"],
+  "ignores": [".claude/**"]
+}

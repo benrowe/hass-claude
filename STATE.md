@@ -117,9 +117,9 @@ Notifications, warnings, reminders:
 - `Alert: Holiday Light On` - Push notification when lights turn on unexpectedly while on holiday → `/house-state`
 
 > Note: Garage and coffee machine alerts were renamed to use room prefixes (Garage:/Dining Room:) and are now listed under Room automations.
-
+>
 > Note: Man Cave On/Off automations are in Mode category (`Mode: Man Cave On` / `Mode: Man Cave Off`). Room count reflects this.
-
+>
 > Note: All push notifications to `notify.mobile_app_ben_s_pixel_pro` include `clickAction: "/house-state"` unless otherwise noted above.
 
 ### System (2 automations)
