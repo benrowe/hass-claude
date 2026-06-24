@@ -81,7 +81,7 @@ Time-based or scheduled whole-house behaviors:
 - `Routine: Man Cave Dusk Adjust` - Adjust man cave lights to evening color temp at sunset
 - `Routine: Update Available` (`automation.alert_update_available`) - Weekly digest of available HA updates (Monday 7am, or on leaving home on Monday)
 
-### Mode (10 automations)
+### Mode (9 automations)
 State toggles affecting multiple systems:
 - `Mode: Driving On` / `Mode: Driving Off` - In-car mode with lighting changes
 - `Mode: Movie On` - Cinema lighting scene
@@ -90,11 +90,11 @@ State toggles affecting multiple systems:
 - `Mode: Holiday On` - Vacation mode with security checks, garage closure, AC/coffee shutdown; push notifications (security warning, garage failure, confirmation) → `/house-state`
 - `Mode: Holiday Off` - Welcome home scene with climate control; push notification → `/house-state`
 - `Mode: Man Cave On` / `Mode: Man Cave Off` - Man cave active state toggle
-- `Away Mode: AC Off Response` (`automation.away_mode_ac_off_response`) - Handles notification action response to turn off AC when away mode activates
 
-### Presence (8 automations)
+### Presence (9 automations)
 Triggered by people's location:
 - `Presence: Everyone Left` - Away mode activation; push notification → `/house-state`
+- `Presence: AC Off Response` (`automation.presence_ac_off_response`) - Handles notification action response to turn off AC when away mode activates
 - `Presence: Someone Arrives` - Away mode deactivation; push notification → `/house-state`
 - `Presence: Ben Arrives Android Auto` - Garage door auto-open; push notification → `/house-state`
 - `Presence: Carol Leaves Castle Hill` - Push notification → `/map`
@@ -125,7 +125,7 @@ HA internals:
 - `System: Set Theme` - Startup theme configuration
 - `System: IKEA Hub Auto-Restart` - Automatic restart of the IKEA Dirigera hub(s)
 
-> Categorized total: 31+8+10+8+8+2 = 67 live automations.
+> Categorized total: 31+8+9+9+8+2 = 67 live automations.
 
 ## Helpers & Toggles
 

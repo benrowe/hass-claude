@@ -4,7 +4,6 @@ Observations flagged while working on something else — not acted on unless ask
 
 ## TBD
 
-- (2026-06-24, `/conventions`) `automation.away_mode_ac_off_response` ("Away Mode: AC Off Response") uses prefix `Away Mode:`, not one of the 7 documented categories.
 - (2026-06-24, `/conventions`) `light.coffee_machine`, `light.dehumidifier` — entity_ids have no area prefix, breaking the `light.<area>_<fixture>` pattern.
 - (2026-06-24, `/conventions`) `light.kitchen_downlight_1_2` — entity_id implies "1_2" but friendly name is "Kitchen Downlight 4"; confusing mismatch worth a rename.
 - (2026-06-24, `/conventions`) `light.hue_calla_outdoor_pedestal_1`, `light.hue_calla_outdoor_pedestal_2`, `light.hue_lily_xl_outdoor_spot_1` — entity_ids use the Hue device model name instead of area (these are Front Yard lights).
