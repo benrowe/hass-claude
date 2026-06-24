@@ -56,7 +56,7 @@ All 16 known Hue group entities have been disabled (registry-level, `disabled_by
 
 ## Automation Categories
 
-### Room (28 automations)
+### Room (31 automations)
 Automations scoped to a single room, named by trigger:
 - **Garage:** Open, Close, Override On/Off (push notifications → `/house-state`), Scanned, Auto disable override when doors close, Left Doors Open Too Long (push notification → `/house-state`), No Motion With Override Enabled (push notification → `/house-state`)
 - **Man Cave:** Open, Scanned, Temperature Check (push notification with AC action buttons → `/house-state`), AC Prompt Response (push notification → `/house-state`), Sim Rig On, Sim Rig Off
@@ -65,7 +65,7 @@ Automations scoped to a single room, named by trigger:
 - **Dining Room:** Coffee Machine On, Coffee machine left on Reminder, Coffee Machine ready, Turn off coffee machine via Notification
 - **Front Yard:** Motion Lights
 - **Backyard:** Motion Lights, Motion: Turn on kitchen when man cave is on
-- **Front Door:** Motion Lights
+- **Front Door:** Motion Lights, Holiday Lights On, Holiday Lights Off, Holiday Timer Started
 - **Hallway:** Motion Lights
 
 > Note: `Garage override: On` / `Garage override: Off` use the prefix "Garage override:" rather than "Garage:" — flagged in ISSUES.md.
@@ -125,7 +125,7 @@ HA internals:
 - `System: Set Theme` - Startup theme configuration
 - `System: IKEA Hub Auto-Restart` - Automatic restart of the IKEA Dirigera hub(s)
 
-> Note: 3 further automations (`Holiday: Front Door Opens - Lights On`, `Holiday: Door Opened Timer Finished - Lights Off`, `Holiday: Front Door Opened Timer`) use a `Holiday:` prefix not in the 7-category list above — flagged in `ISSUES.md` rather than forced into a category here. Categorized total above (28+8+10+8+8+2=64) plus these 3 = 67 live automations.
+> Categorized total: 31+8+10+8+8+2 = 67 live automations.
 
 ## Helpers & Toggles
 
