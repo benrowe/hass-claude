@@ -40,7 +40,9 @@ This file provides context for Claude Code when working with Ben Rowe's Home Ass
 **Format:** `{Category}: {Trigger Description}`
 
 - **Entities:** Room/Area/Zone based (e.g., `light.kitchen_downlights`, `cover.garage_door_car`)
+- **Devices:** `{Area} {Fixture}` in title case (e.g., "Kitchen Downlights", "Garage Door Car") — mirrors the entity_id so it can be mechanically derived (lowercase, spaces → underscores). Replace vendor-default device names (e.g. "Hue color lamp 3", "Smart Plug") with this pattern.
 - **Automations:** Category prefix + trigger-based name. Actions may change over time; trigger-based names remain stable.
+- **Exceptions:** Entities/devices that aren't area-bound (e.g. `person.*`, `zone.*`, `update.*`, integration/hub diagnostic entities) don't need to fit the area-based pattern — name them for what they represent instead (e.g. `person.ben`, `update.hue_bridge_firmware`).
 
 #### Automation Categories (7 total)
 
@@ -130,4 +132,25 @@ Motion sensors trigger lights only when:
 ### Sensors
 - `binary_sensor.<area>_motion` (motion detection)
 - `sensor.<area>_temperature` (temperature readings)
-- `sensor.<area>_illuminance` (light levels)
+- `sensor.<area>_illuminance` (light level readings)
+
+### Switches & Plugs
+- `switch.<area>_<fixture>` (e.g., `switch.man_cave_sim_rig`)
+
+### Locks
+- `lock.<area>_<fixture>` (e.g., `lock.front_door`)
+
+### Media Players
+- `media_player.<area>_<fixture>` (e.g., `media_player.living_room_tv`)
+
+### Fans
+- `fan.<area>_<fixture>` (e.g., `fan.bedroom_ceiling`)
+
+### Buttons
+- `button.<area>_<fixture>` or `button.<device>_<action>` for NFC/scene-trigger buttons (e.g., `button.garage_nfc_tag`)
+
+### Vacuums
+- `vacuum.<area>_<fixture>` if area-bound, otherwise `vacuum.<device_name>` (e.g., `vacuum.robot`)
+
+### Cameras
+- `camera.<area>_<fixture>` (e.g., `camera.driveway`)
