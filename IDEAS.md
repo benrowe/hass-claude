@@ -12,3 +12,5 @@ A real unit-test harness would need:
 - Some sync mechanism to keep exported YAML fixtures from drifting out of sync with the live registry (or to decide automations should be authored as YAML + deployed, rather than edited live).
 
 Worth revisiting if this setup's automation count/complexity grows enough that live-only verification feels risky, or if this tooling (this repo + the `ha-verify`/`/rename`/`/conventions` skills) gets generalized and open-sourced for others to use on their own HA instances — at that point a real test suite would matter a lot more than it does for a single household's live config.
+
+research: `pytest-homeassistant-custom-component`
