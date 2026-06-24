@@ -6,7 +6,9 @@ This repo doesn't contain Home Assistant config (no YAML, no `.storage/`). HA it
 
 ## Contents
 
-- `CLAUDE.md` — current state of the HA instance: areas, integrations, automation categories/naming conventions, helpers, sensors, key entities. Kept up to date after changes are made via Claude.
+- `CLAUDE.md` — durable conventions and policies (naming, icons, automation patterns, integration quirks). Auto-loaded into context; kept free of point-in-time state so it can't go stale.
+- `STATE.md` — point-in-time inventory snapshot (entity/device counts, areas, automations, helpers, sensors, dashboards). Read on demand, not auto-loaded; never trusted over a live MCP query.
+- `CHANGELOG.md` — log of changes made to the HA instance via Claude.
 
 ## Setup on a new machine
 
