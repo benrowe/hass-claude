@@ -65,7 +65,7 @@ All automations, helpers, and entities should have appropriate MDI icons. Icons 
 - `light.<area>_light_bar` for override indicators
 
 ### Climate
-- `climate.<area>_ac` (Sensibo units)
+- `climate.<area>_air_conditioning` (Sensibo units)
 
 ### Covers
 - `cover.garage_door_<n>` (OpenGarage)
