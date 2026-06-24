@@ -6,11 +6,11 @@ Point-in-time inventory of Ben Rowe's Home Assistant instance. Not auto-loaded i
 
 ## Overview
 
-- **Entities:** 482
+- **Entities:** 554
 - **Devices:** ~118
 - **Integrations:** ~38
 - **Areas:** 14
-- **Automations:** 58
+- **Automations:** 67
 
 ## Areas/Rooms
 
@@ -26,11 +26,11 @@ Point-in-time inventory of Ben Rowe's Home Assistant instance. Not auto-loaded i
 - Hallway
 - Spare Room
 - Backyard
+- Man Cave
 
 ### Garage/External
 - Garage
 - Front Yard
-- Man Cave
 
 ### Disabled Hue Group Entities
 
@@ -56,11 +56,11 @@ All 16 known Hue group entities have been disabled (registry-level, `disabled_by
 
 ## Automation Categories
 
-### Room (24 automations)
+### Room (28 automations)
 Automations scoped to a single room, named by trigger:
 - **Garage:** Open, Close, Override On/Off (push notifications → `/house-state`), Scanned, Auto disable override when doors close, Left Doors Open Too Long (push notification → `/house-state`), No Motion With Override Enabled (push notification → `/house-state`)
-- **Man Cave:** Open, Scanned, Temperature Check (push notification with AC action buttons → `/house-state`), AC Prompt Response (push notification → `/house-state`)
-- **Kitchen:** Motion
+- **Man Cave:** Open, Scanned, Temperature Check (push notification with AC action buttons → `/house-state`), AC Prompt Response (push notification → `/house-state`), Sim Rig On, Sim Rig Off
+- **Kitchen:** Motion, Light Bar On With No Motion, Light Bar Turned Off
 - **Living Room:** TV On, TV Off
 - **Dining Room:** Coffee Machine On, Coffee machine left on Reminder, Coffee Machine ready, Turn off coffee machine via Notification
 - **Front Yard:** Motion Lights
@@ -68,17 +68,20 @@ Automations scoped to a single room, named by trigger:
 - **Front Door:** Motion Lights
 - **Hallway:** Motion Lights
 
-### Routine (9 automations)
+> Note: `Garage override: On` / `Garage override: Off` use the prefix "Garage override:" rather than "Garage:" — flagged in ISSUES.md.
+
+### Routine (8 automations)
 Time-based or scheduled whole-house behaviors:
 - `Routine: Morning` - Wake time triggers (lights, coffee machine, dehumidifier)
 - `Routine: Dusk` - Sunset outdoor lights
 - `Routine: Bedtime` - Nightly turn-off routine
-- `Routine: Bedtime Start` - Bedtime boolean trigger
 - `Routine: Outdoor Lights Off` - 11 PM outdoor lights off
 - `Routine: Holiday Lights` - Random light simulation for occupancy while away
 - `Routine: Holiday Lights Off` - Turn off simulation lights at bedtime
 - `Routine: Man Cave Dusk Adjust` - Adjust man cave lights to evening color temp at sunset
 - `Routine: Update Available` (`automation.alert_update_available`) - Weekly digest of available HA updates (Monday 7am, or on leaving home on Monday)
+
+> Note: `Routine: Bedtime Start` (previously listed here) no longer exists live — flagged in ISSUES.md.
 
 ### Mode (10 automations)
 State toggles affecting multiple systems:
@@ -102,12 +105,14 @@ Triggered by people's location:
 - `Presence: Both at Changi Airport` - Holiday mode auto-enable
 - `Presence: Arrival Lights` - Turn on lights when arriving home after dusk
 
-### Alert (6 automations)
+### Alert (8 automations)
 Notifications, warnings, reminders:
 - `Alert: Doorbell Ring` - TTS + chime
 - `Alert: Battery Low` - Low battery notifications (blueprint-managed)
 - `Alert: Shopping List Reminder` - Shopping zone notification
 - `Alert: Meater 20min Remaining` - Cooking timer TTS to Man Cave + Kitchen speakers
+- `Alert: Meater Cook Started` - Notification when a Meater cook begins
+- `Alert: Meater Estimated Time Available` - Notification once Meater estimates a finish time
 - `Alert: Holiday Door Opened` - Push notification when doors open while on holiday → `/house-state`
 - `Alert: Holiday Light On` - Push notification when lights turn on unexpectedly while on holiday → `/house-state`
 
@@ -117,9 +122,12 @@ Notifications, warnings, reminders:
 
 > Note: All push notifications to `notify.mobile_app_ben_s_pixel_pro` include `clickAction: "/house-state"` unless otherwise noted above.
 
-### System (1 automation)
+### System (2 automations)
 HA internals:
 - `System: Set Theme` - Startup theme configuration
+- `System: IKEA Hub Auto-Restart` - Automatic restart of the IKEA Dirigera hub(s)
+
+> Note: 3 further automations (`Holiday: Front Door Opens - Lights On`, `Holiday: Door Opened Timer Finished - Lights Off`, `Holiday: Front Door Opened Timer`) use a `Holiday:` prefix not in the 7-category list above — flagged in `ISSUES.md` rather than forced into a category here. Categorized total above (28+8+10+8+8+2=64) plus these 3 = 67 live automations.
 
 ## Helpers & Toggles
 
@@ -132,6 +140,7 @@ HA internals:
 - `input_boolean.away_mode` - Away from home
 - `input_boolean.bed_time` - Bedtime mode active
 - `input_boolean.entertainment_mode` - Entertainment mode active
+- `input_boolean.ben_s_ipad_in_use` - Tracks whether Ben's iPad is in use
 
 ### Input Numbers
 - Speaker volumes (per room/device)
@@ -180,5 +189,5 @@ HA internals:
 
 ## Key Devices
 
-- **Main TV:** `media_player.living_room_tv_2` (Living Room TV - Chromecast)
-- **Stale/disabled:** `media_player.living_room_tv` — disabled (duplicate, do not use)
+- **Main TV:** unconfirmed — `media_player.living_room_tv_2` (previously listed here) no longer exists. Live candidates: `media_player.living_room_tv_2_2` ("Living Room Sony TV", state `unavailable`) and `media_player.living_room` ("Living Room", state `off`). See `ISSUES.md`.
+- **Stale/disabled:** `media_player.living_room_tv` — also no longer found.
