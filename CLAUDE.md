@@ -89,6 +89,10 @@ All automations, helpers, and entities should have appropriate MDI icons. Icons 
 - Front Yard
 - Man Cave
 
+### Hue Groups
+
+**Do not use Hue groups (Bridge-side room/zone groups).** They cause sync/state issues with HA. If a Hue group entity is found, disable it rather than using it for automations.
+
 ## Key Integrations
 
 | Integration | Devices | Purpose |
