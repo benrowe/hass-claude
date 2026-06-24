@@ -21,6 +21,7 @@ This repo doesn't contain Home Assistant config (no YAML, no `.storage/`). HA it
 - `/issues` — lists open `ISSUES.md` entries and works through one interactively until resolved (`.claude/commands/issues.md`).
 - `/rename` — proposes a better name for a device/entity, checks consumers, then renames and patches them once approved (`.claude/commands/rename.md`).
 - `/verify` — runs the `ha-verify` testing loop against a change or a reported problem (`.claude/commands/verify.md`).
+- `/new-setup` — resets the instance-specific docs (`STATE.md`, `CHANGELOG.md`, `DOCS-CHANGELOG.md`, `ISSUES.md`, `IDEAS.md`, `VERIFY.md`) to empty skeletons; for starting a fresh fork of this repo (`.claude/commands/new-setup.md`).
 
 ## Skills
 
@@ -41,3 +42,12 @@ This repo doesn't contain Home Assistant config (no YAML, no `.storage/`). HA it
    }
    ```
 3. Open the repo in Claude Code — `CLAUDE.md` is loaded automatically as project context.
+
+## Using this as a template
+
+`CLAUDE.md`, the `.claude/commands/`, and the `.claude/skills/` are generic — they describe conventions and workflows for *any* Home Assistant instance, not facts about a specific one. `STATE.md`, `CHANGELOG.md`, `DOCS-CHANGELOG.md`, `ISSUES.md`, `IDEAS.md`, and `VERIFY.md` are the opposite: logs/snapshots of one household's actual setup and history. To reuse this repo for your own instance:
+
+1. Clone the repo, then drop its git history and start your own: `rm -rf .git && git init`.
+2. Set up `.mcp.json` per the steps above, pointing at your own Home Assistant instance.
+3. Open the repo in Claude Code and run `/new-setup` to reset the instance-specific docs to empty skeletons.
+4. Run `/state` to populate `STATE.md` from your live instance, and optionally `/conventions` to audit it against `CLAUDE.md`'s naming conventions.
