@@ -32,6 +32,8 @@ This repo doesn't contain Home Assistant config (no YAML, no `.storage/`). HA it
 
 ## Setup on a new machine
 
+**Requirements:** Node.js/npx (for `make lint-md`, run via `npx markdownlint-cli2`).
+
 1. Clone this repo.
 2. Create `.mcp.json` (gitignored — contains a private connection token) pointing at the HA MCP server:
 
