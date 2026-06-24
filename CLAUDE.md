@@ -107,6 +107,8 @@ All automations, helpers, and entities should have appropriate MDI icons. Icons 
 
 **Do not use Hue groups (Bridge-side room/zone groups).** They cause sync/state issues with HA. If a Hue group entity is found, disable it rather than using it for automations.
 
+All 16 known Hue group entities have been disabled (registry-level, `disabled_by: user`): `light.kitchen`, `light.living_room`, `light.living_room_2`, `light.dining_room`, `light.bathroom`, `light.hallway`, `light.man_cave`, `light.entry`, `light.study`, `light.toilet`, `light.garage`, `light.zone_hallway`, `light.zone_kitchen`, `light.zone_living_area`, `light.backyard`, `light.front_yard`. Automations that previously targeted these groups were rewired to target the individual member lights directly.
+
 ## Key Integrations
 
 | Integration | Devices | Purpose |
