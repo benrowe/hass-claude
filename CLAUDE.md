@@ -7,6 +7,9 @@ This file provides context for Claude Code when working with Ben Rowe's Home Ass
 ## Process
 
 - **Before any persistent config change** (automations, scripts, scenes, helpers, dashboards, entities, areas, etc.), consult the `home-assistant-best-practices` skill ("Get Home Assistant Best Practices Skill Guide") and read the reference file(s) it points to for the task at hand.
+- **Before touching any entity or automation** — not just renames/disables — search for consumers/usages first (automations, scripts, scenes, dashboards). This is a single live HA instance with no staging environment, so there's no safety net if a change breaks something downstream.
+- **No domain needs extra confirmation by default** (locks, alarm, cameras included) — treat all entities the same unless told otherwise for a specific case.
+- **If you notice an inconsistency, stale entity, or improvement opportunity while working on something else**, don't act on it — add it to `ISSUES.md` under a `TBD` entry instead. Only fix it if asked.
 - **After any change that mutates server state** (the live HA instance — automations, helpers, entities, etc.), append an entry to `CHANGELOG.md` in the repo root.
 - **After any change to this repo's own files/structure** (CLAUDE.md, STATE.md, README.md, conventions — not the live HA instance), append an entry to `DOCS-CHANGELOG.md` instead.
 - Both changelogs use the same format:
@@ -24,6 +27,11 @@ This file provides context for Claude Code when working with Ben Rowe's Home Ass
 - Convenience & comfort
 - Energy efficiency
 - Security & safety
+
+## Household Context
+
+- **Cleaners** visit fortnightly while Ben/Carol are usually home — no automation impact.
+- **Pet sitters** visit while `input_boolean.holiday_mode` is on (away). This is why holiday mode has front-door-triggered light automations (to assist the sitter) and alerts for doors opening / lights turning on unexpectedly — see `Holiday:`/`Alert: Holiday *` automations in `STATE.md`.
 
 ## Naming Convention
 

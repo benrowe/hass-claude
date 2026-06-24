@@ -10,6 +10,7 @@ This repo doesn't contain Home Assistant config (no YAML, no `.storage/`). HA it
 - `STATE.md` — point-in-time inventory snapshot (entity/device counts, areas, automations, helpers, sensors, dashboards). Read on demand, not auto-loaded; never trusted over a live MCP query.
 - `CHANGELOG.md` — log of changes made to the HA instance via Claude.
 - `DOCS-CHANGELOG.md` — log of changes to this repo's own files/structure (not the HA instance).
+- `ISSUES.md` — observations flagged during other work but not acted on; each starts `TBD` until reviewed.
 
 ## Setup on a new machine
 

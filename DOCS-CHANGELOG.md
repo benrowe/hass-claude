@@ -10,3 +10,5 @@ Log of changes to this repo's own files/structure (CLAUDE.md, STATE.md, README.m
 4. Changed `CHANGELOG.md` entries from bullets to ordered lists, to reflect logical step sequence.
 5. Split point-in-time inventory (entity/device counts, areas, automations, helpers, sensors, dashboards) out of `CLAUDE.md` into a new `STATE.md`, read on demand rather than auto-loaded, so stale counts can't silently mislead. `CLAUDE.md` retained only durable conventions/policies.
 6. Added this file (`DOCS-CHANGELOG.md`) to track repo/doc changes separately from HA server-state changes.
+7. Added `ISSUES.md` for observations flagged during other work but not acted on (status starts `TBD`).
+8. Documented in `CLAUDE.md`: always search for consumers before touching any entity/automation (no staging environment); no entity domain gets extra confirmation by default; household context (cleaners fortnightly, pet sitters during holiday mode) explaining the holiday automations' purpose.
