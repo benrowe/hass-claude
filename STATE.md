@@ -141,6 +141,10 @@ HA internals:
 - `input_boolean.entertainment_mode` - Entertainment mode active
 - `input_boolean.ben_s_ipad_in_use` - Tracks whether the iPad is in use
 
+### Light Groups
+- `light.kitchen_lights` - Groups the 4 kitchen downlights; used on dashboard cards needing single-entity whole-room control (replaces the disabled `light.kitchen` Hue group)
+- `light.living_room_lights` - Groups `light.living_room_main`/`light.living_room_lamp`; same purpose (replaces the disabled `light.living_room` Hue group)
+
 ### Input Numbers
 - Speaker volumes (per room/device)
 - Outdoor brightness levels
