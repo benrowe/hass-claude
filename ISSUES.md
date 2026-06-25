@@ -4,7 +4,6 @@ Observations flagged while working on something else — not acted on unless ask
 
 ## TBD
 
-- (2026-06-24, `/conventions`) `light.hue_calla_outdoor_pedestal_1`, `light.hue_calla_outdoor_pedestal_2`, `light.hue_lily_xl_outdoor_spot_1` — entity_ids use the Hue device model name instead of area (these are Front Yard lights).
 - (2026-06-24, `/conventions`) `binary_sensor.sensor_1` ("Kitchen Motion Sensor") — fully generic id, doesn't follow `binary_sensor.<area>_motion`.
 - (2026-06-24, `/conventions`) `binary_sensor.hue_outdoor_motion_sensor_1_motion` ("Backyard Sensor Motion") and `binary_sensor.hue_outdoor_motion_sensor_1_motion_2` ("Front Yard sensor Motion") — device-based ids instead of area-based, with a `_2` collision suffix.
 - (2026-06-24, `/conventions`) `sensor.hue_outdoor_motion_sensor_1_temperature`/`_temperature_2` and `_illuminance`/`_illuminance_2` — same device-based naming issue as the binary_sensor pair above (Backyard/Front Yard).
