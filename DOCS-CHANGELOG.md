@@ -48,3 +48,7 @@ Log of changes to this repo's own files/structure (CLAUDE.md, STATE.md, README.m
 22. Updated `STATE.md`'s Motion Sensors entry to `binary_sensor.kitchen_motion` after renaming `binary_sensor.sensor_1`; deleted the two now-resolved `ISSUES.md` entries (generic id, area mismatch).
 23. Moved "Motion Lights" out of `STATE.md`'s Front Door Room bullet into a new Entry bullet, after renaming `automation.front_door_motion_lights` to `automation.entry_motion`. Deleted the resolved `ISSUES.md` entry.
 24. Added a `GOTCHAS.md` entry: renaming an automation's `alias` updates the registry's `original_name` but not a pre-existing `name` override, leaving the old display name showing in the UI; document the fix path (check via `ha_get_entity`, clear manually in the UI if the MCP tool call won't go through) since this has now bitten two separate renames in this repo's history.
+
+## 2026-06-26
+
+1. Added `push` target to `Makefile` (`make push` runs `git push`). Updated `CLAUDE.md` to document that `make push` should be used instead of `git push` directly.

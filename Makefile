@@ -3,7 +3,7 @@ YELLOW := $(shell tput -Txterm setaf 3)
 RESET  := $(shell tput -Txterm sgr0)
 TARGET_MAX_CHAR_NUM=20
 
-.PHONY: help lint-md
+.PHONY: help lint-md push
 
 ## Show this help
 help:
@@ -25,3 +25,7 @@ help:
 ## Lint Markdown files (requires Node.js/npx); config in .markdownlint-cli2.jsonc
 lint-md:
 	npx --yes markdownlint-cli2
+
+## Push current branch to remote
+push:
+	git push
