@@ -65,7 +65,8 @@ Automations scoped to a single room, named by trigger:
 - **Dining Room:** Coffee Machine On, Coffee machine left on Reminder, Coffee Machine ready, Turn off coffee machine via Notification
 - **Front Yard:** Motion Lights
 - **Backyard:** Motion Lights, Motion: Turn on kitchen when man cave is on
-- **Front Door:** Motion Lights, Holiday Lights On, Holiday Lights Off, Holiday Timer Started
+- **Front Door:** Holiday Lights On, Holiday Lights Off, Holiday Timer Started
+- **Entry:** Motion
 - **Hallway:** Motion Lights
 
 > Note: `Garage override: On` / `Garage override: Off` use the prefix "Garage override:" rather than "Garage:" — flagged in ISSUES.md.

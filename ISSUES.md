@@ -6,7 +6,6 @@ Observations flagged while working on something else — not acted on unless ask
 
 - (2026-06-25, `/issues`) The `front_yard` area's `temperature_entity_id` config field still points at the old entity_id `sensor.hue_outdoor_motion_sensor_1_temperature_2` (now renamed to `sensor.front_yard_temperature`) — the available MCP tools don't expose a way to update this area field directly. Needs a manual fix via Settings → Areas → Front Yard → Temperature sensor (or a future tool addition), otherwise the area card will show no/stale temperature.
 - (2026-06-25, `/issues`) `Backyard: Motion Man Cave Active` (`automation.backyard_motion_man_cave_active`) uses a motion trigger with a 5-minute delay but `mode: single` — the best-practices skill flagged this; `mode: restart` would be more correct so re-triggers reset the timer. Noticed while patching an unrelated rename, not fixed in scope.
-- (2026-06-24, `/conventions`) `automation.front_door_motion_lights` ("Front Door: Motion Lights") — category prefix doesn't match its assigned area (`entry`). Worth a look.
 - (2026-06-24, `/conventions`) `automation.tag_man_cave_is_scanned` ("Man cave: Scanned") — lowercase "cave" inconsistent with "Man Cave" capitalization used elsewhere. Worth a look.
 - (2026-06-24, `/conventions`) `light.tv_lightstrip` — no area prefix (likely Living Room). Worth a look.
 - (2026-06-24, `/conventions`) `light.outdoor`, `light.outdoor_2`–`light.outdoor_5`, `light.outdoor_porch` — generic "outdoor" naming, ambiguous which physical area each belongs to. Worth a look.
