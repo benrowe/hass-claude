@@ -4,7 +4,6 @@ Observations flagged while working on something else — not acted on unless ask
 
 ## TBD
 
-- (2026-06-24, `/conventions`) `light.coffee_machine`, `light.dehumidifier` — entity_ids have no area prefix, breaking the `light.<area>_<fixture>` pattern.
 - (2026-06-24, `/conventions`) `light.kitchen_downlight_1_2` — entity_id implies "1_2" but friendly name is "Kitchen Downlight 4"; confusing mismatch worth a rename.
 - (2026-06-24, `/conventions`) `light.hue_calla_outdoor_pedestal_1`, `light.hue_calla_outdoor_pedestal_2`, `light.hue_lily_xl_outdoor_spot_1` — entity_ids use the Hue device model name instead of area (these are Front Yard lights).
 - (2026-06-24, `/conventions`) `binary_sensor.sensor_1` ("Kitchen Motion Sensor") — fully generic id, doesn't follow `binary_sensor.<area>_motion`.
@@ -17,3 +16,4 @@ Observations flagged while working on something else — not acted on unless ask
 - (2026-06-24, `/conventions`) `light.outdoor`, `light.outdoor_2`–`light.outdoor_5`, `light.outdoor_porch` — generic "outdoor" naming, ambiguous which physical area each belongs to. Worth a look.
 - (2026-06-24, `/conventions`) `binary_sensor.outdoor_sensor_motion`, `sensor.outdoor_sensor_temperature`, `sensor.outdoor_sensor_illuminance` — id says "outdoor" but friendly name/area is "Entry Porch". Worth a look (historical naming).
 - (2026-06-24, `/conventions`) `binary_sensor.hallway_motion` vs `binary_sensor.hallway_sensor_1_motion` (plus matching temperature/illuminance sensors) — two inconsistently-named hallway sensors; possibly one is redundant/legacy. Worth a look.
+- (2026-06-25, `/issues`) While patching consumers for the coffee_machine/dehumidifier rename, noticed `Mode: Holiday On` (`automation.holiday_mode_enable_from_notification`) and `Routine: Bedtime` (`automation.bedtime_routine_turn_off`) use template conditions/variables (`is_state()`, `{% if %}`) for door/garage state checks where native `state` conditions would work — flagged by the best-practices skill as anti-patterns. Worth a refactor pass.
