@@ -34,7 +34,7 @@ Point-in-time inventory of this Home Assistant instance. Not auto-loaded into co
 
 ### Disabled Hue Group Entities
 
-All 16 known Hue group entities have been disabled (registry-level, `disabled_by: user`): `light.kitchen`, `light.living_room`, `light.living_room_2`, `light.dining_room`, `light.bathroom`, `light.hallway`, `light.man_cave`, `light.entry`, `light.study`, `light.toilet`, `light.garage`, `light.zone_hallway`, `light.zone_kitchen`, `light.zone_living_area`, `light.backyard`, `light.front_yard`. See "Hue Groups" in `GOTCHAS.md` for the policy. Automations that previously targeted these groups were rewired to target the individual member lights directly.
+All 16 known Hue group entities have been disabled (registry-level, `disabled_by: user`): `light.kitchen`, `light.living_room`, `light.living_room_2`, `light.dining_room`, `light.bathroom`, `light.hallway`, `light.man_cave`, `light.entry`, `light.study`, `light.toilet`, `light.garage`, `light.zone_hallway`, `light.zone_kitchen`, `light.zone_living_area`, `light.backyard`, `light.front_yard`. See "Hue Groups" in `GOTCHAS.md` for the policy. Automations that previously targeted these groups were rewired to target the individual member lights directly. The hallway Room device's sibling entities `binary_sensor.hallway_motion` and `sensor.hallway_illuminance` (bundled alongside `light.hallway` on the same Hue Room virtual device, unused by any automation) were also disabled for the same reason — the real hallway motion/illuminance sensing comes from the standalone `binary_sensor.hallway_sensor_1_motion` device instead.
 
 ## Key Integrations
 
