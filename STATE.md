@@ -41,7 +41,7 @@ All 16 known Hue group entities have been disabled (registry-level, `disabled_by
 | Integration | Devices | Purpose |
 |-------------|---------|---------|
 | Philips Hue | 65 | Lighting (bulbs, light strips, motion sensors) |
-| Google Cast | 10 | Media/speakers, TTS announcements |
+| Google Cast | 9 | Media/speakers, TTS announcements |
 | Unifi Protect | 5 | Security cameras, smart detection |
 | IKEA Dirigera | 2 hubs | Door/window sensors, smart plugs (Man Cave hub: `01KHQ3FME5ERP02BKGF5M6KTHV`; Garage hub: `01KA77PTGFNGJ8PZWGQMSA2821`) |
 | Sensibo | 3 | Climate control (AC units) |

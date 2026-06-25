@@ -44,3 +44,4 @@ Log of changes to this repo's own files/structure (CLAUDE.md, STATE.md, README.m
 18. Worked `ISSUES.md` backlog via `/issues`: deleted the resolved `Garage override:` naming entry and the garage-lights-bug entry (root cause found and fixed, verified live).
 19. Worked `ISSUES.md` backlog via `/issues`: removed the stale "Pool area" line from `STATE.md`'s Temperature & Illuminance list — no pool area or entity exists anywhere in this instance (checked exact + fuzzy search, all 14 areas). Deleted the resolved entry.
 20. Worked `ISSUES.md` backlog via `/issues`: corrected `STATE.md`'s Main TV entry to `media_player.living_room_tv_2_2` (real Sony TV) and clarified `media_player.living_room` is the Bose soundbar, not a TV. Deleted the resolved entry.
+21. Decremented `STATE.md`'s Google Cast device count (10→9) after the kitchen Chromecast device was removed from the live instance.
