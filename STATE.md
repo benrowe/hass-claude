@@ -157,7 +157,7 @@ HA internals:
 
 ### Motion Sensors (11 total)
 - **Hue Motion Sensors:** Kitchen, Man Cave, Outdoor areas
-- **IKEA:** `binary_sensor.sensor_1` → "Kitchen Motion Sensor" (IKEA Dirigera)
+- **IKEA:** `binary_sensor.kitchen_motion` → "Kitchen Motion Sensor" (IKEA Dirigera)
 - **Camera-based:** Unifi Protect smart detection (driveway, front door)
 - **Entry Porch:** `binary_sensor.outdoor_sensor_motion` → "Entry Porch Sensor Motion" (previously "Landing sensor")
 

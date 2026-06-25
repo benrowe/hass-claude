@@ -4,10 +4,8 @@ Observations flagged while working on something else — not acted on unless ask
 
 ## TBD
 
-- (2026-06-24, `/conventions`) `binary_sensor.sensor_1` ("Kitchen Motion Sensor") — fully generic id, doesn't follow `binary_sensor.<area>_motion`.
 - (2026-06-24, `/conventions`) `binary_sensor.hue_outdoor_motion_sensor_1_motion` ("Backyard Sensor Motion") and `binary_sensor.hue_outdoor_motion_sensor_1_motion_2` ("Front Yard sensor Motion") — device-based ids instead of area-based, with a `_2` collision suffix.
 - (2026-06-24, `/conventions`) `sensor.hue_outdoor_motion_sensor_1_temperature`/`_temperature_2` and `_illuminance`/`_illuminance_2` — same device-based naming issue as the binary_sensor pair above (Backyard/Front Yard).
-- (2026-06-25, `/issues`) While renaming the kitchen illuminance sensor, found that `binary_sensor.sensor_1`'s device ("Kitchen Motion Sensor", entities: `binary_sensor.sensor_1`, `sensor.sensor_1_battery_percentage`) has `area_id: entry`, not `kitchen` — despite the device/entity names. A second, separate device also named "Kitchen Motion Sensor" (holding `sensor.kitchen_illuminance`) is correctly assigned to `area_id: kitchen`. Confirm which area this physical sensor is actually in and fix the registry assignment (and possibly the naming, since two unrelated devices share the same name).
 - (2026-06-24, `/conventions`) `automation.front_door_motion_lights` ("Front Door: Motion Lights") — category prefix doesn't match its assigned area (`entry`). Worth a look.
 - (2026-06-24, `/conventions`) `automation.tag_man_cave_is_scanned` ("Man cave: Scanned") — lowercase "cave" inconsistent with "Man Cave" capitalization used elsewhere. Worth a look.
 - (2026-06-24, `/conventions`) `light.tv_lightstrip` — no area prefix (likely Living Room). Worth a look.
