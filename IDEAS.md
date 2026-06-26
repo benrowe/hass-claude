@@ -14,3 +14,13 @@ A real unit-test harness would need:
 Worth revisiting if this setup's automation count/complexity grows enough that live-only verification feels risky, or if this tooling (this repo + the `ha-verify`/`/rename`/`/conventions` skills) gets generalized and open-sourced for others to use on their own HA instances — at that point a real test suite would matter a lot more than it does for a single household's live config.
 
 research: `pytest-homeassistant-custom-component`
+
+## Connect Arlec devices via localtuya
+
+Have a few Arlec smart devices (rebranded Tuya hardware) not yet connected to Home Assistant. Want them integrated so automations can be built around them.
+
+- [`localtuya`](https://xzetsubou.github.io/hass-localtuya/) — HACS custom integration for local (LAN-only, no cloud dependency) control of Tuya-protocol devices. Looks like the right fit since Arlec devices speak Tuya's local protocol under the rebrand.
+- Setup will need each device's Tuya `local_key` and `device_id`, typically pulled via the Tuya IoT Platform/Cloud API per-device, plus the device's local IP — see the linked docs for the extraction steps.
+- Once paired, treat resulting entities like any other — apply naming/icon conventions from `CONVENTIONS.md` before building automations on top.
+
+research: `localtuya` HACS integration, Tuya IoT Platform device key extraction
