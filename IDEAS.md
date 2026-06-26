@@ -36,3 +36,16 @@ The trigger mirrors the pattern already used in the arrival automation: person's
 - Confirm the per-person notify service names (`notify.mobile_app_<device>`).
 - Decide: two automations vs. one with per-trigger routing (`choose` on `trigger.entity_id`).
 - Consider a brief delay (5–10 s) after zone departure before checking the door — zone exit can fire before the car has physically cleared the garage.
+
+## Auto-Off Internal Lights on Departure
+
+When both residents leave home, internal lights are often left on. This automation would trigger whenever either person leaves, check if both are now "not_home", wait 5 minutes, confirm both are still away, then turn off all internal lights.
+
+- Trigger: `person.ben` or `person.carol` transitions to "not_home"
+- Condition: both persons are "not_home" at trigger time
+- Condition: `input_boolean.holiday_mode` is off (pet sitter may need lights)
+- Action: wait 5 minutes, re-check both still away, call `light.turn_off` on all internal light groups/areas
+- Automation mode: `restart` — so if the second person leaves, comes back, then leaves again, the 5-minute timer resets cleanly
+- Need to identify the right light targets — likely a `light` domain call scoped to internal areas only
+
+research: whether HA supports a single "all indoor lights" group or if targets need to be enumerated per area
