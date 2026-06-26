@@ -24,3 +24,15 @@ Have a few Arlec smart devices (rebranded Tuya hardware) not yet connected to Ho
 - Once paired, treat resulting entities like any other — apply naming/icon conventions from `CONVENTIONS.md` before building automations on top.
 
 research: `localtuya` HACS integration, Tuya IoT Platform device key extraction
+
+## Auto-close garage on car departure
+
+When a household member leaves the home zone while connected to Android Auto, HA should check if the garage door is open and close it automatically, then notify the person who just left that it was closed on their behalf. This handles the common "drove off and forgot the garage" scenario without needing to check manually.
+
+The trigger mirrors the pattern already used in the arrival automation: person's zone changes from `home` while their Android Auto sensor is `on`. Because both household members drive, this needs to handle either person departing — with the notification going to the same phone that triggered it (not a broadcast). Two automations (one per person) is the simplest approach since the notify target is person-specific; a single automation using `trigger.entity_id` to resolve the right notify service is an alternative.
+
+- Identify the Android Auto sensor entity_ids for both people (already used in the arrival automation — check there).
+- Identify the garage door cover entity (`cover.garage_door_car` or similar) and confirm the close service works reliably from automation context.
+- Confirm the per-person notify service names (`notify.mobile_app_<device>`).
+- Decide: two automations vs. one with per-trigger routing (`choose` on `trigger.entity_id`).
+- Consider a brief delay (5–10 s) after zone departure before checking the door — zone exit can fire before the car has physically cleared the garage.
