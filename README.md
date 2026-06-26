@@ -26,6 +26,7 @@ This repo doesn't contain Home Assistant config (no YAML, no `.storage/`). HA it
 - `/verify` — runs the `ha-verify` testing loop against a change or a reported problem (`.claude/commands/verify.md`).
 - `/new-setup` — resets the instance-specific docs (`STATE.md`, `CHANGELOG.md`, `DOCS-CHANGELOG.md`, `ISSUES.md`, `IDEAS.md`, `VERIFY.md`) to empty skeletons; for starting a fresh fork of this repo (`.claude/commands/new-setup.md`).
 - `/summary` — digests open `ISSUES.md` entries and `IDEAS.md` and suggests what to work on next (`.claude/commands/summary.md`).
+- `/idea` — discuss and flesh out a new idea, then record it in `IDEAS.md` (`.claude/commands/idea.md`).
 
 ## Skills
 

@@ -53,3 +53,7 @@ Log of changes to this repo's own files/structure (CLAUDE.md, STATE.md, README.m
 
 1. Added `push` target to `Makefile` (`make push` runs `git push`). Updated `CLAUDE.md` to document that `make push` should be used instead of `git push` directly.
 2. Added an `IDEAS.md` entry: connect a few Arlec smart devices (rebranded Tuya hardware, not yet in Home Assistant) via the [`localtuya`](https://xzetsubou.github.io/hass-localtuya/) HACS integration for local-only control, ahead of building automations around them.
+
+## 2026-06-27
+
+1. Added `/idea` slash command (`.claude/commands/idea.md`) — discuss and flesh out a new idea interactively (motivation, what it'd take, gotchas), then record it as a well-formed entry in `IDEAS.md`. Updated `README.md`'s Available Commands list.
