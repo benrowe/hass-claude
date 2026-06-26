@@ -58,3 +58,4 @@ Log of changes to this repo's own files/structure (CLAUDE.md, STATE.md, README.m
 
 1. Added `/idea` slash command (`.claude/commands/idea.md`) — discuss and flesh out a new idea interactively (motivation, what it'd take, gotchas), then record it as a well-formed entry in `IDEAS.md`. Updated `README.md`'s Available Commands list.
 2. Added `IDEAS.md` entry: auto-close garage door when a household member leaves the home zone while connected to Android Auto, notifying that person's phone.
+3. Updated `CLAUDE.md` Process: push immediately after every commit using `make push` (previously only said to use `make push` rather than `git push`, not when).
