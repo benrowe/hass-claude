@@ -41,3 +41,4 @@ Log of changes made to this Home Assistant instance.
 ## 2026-06-27
 
 1. Added sunrise trigger to `Routine: Outdoor Lights Off` (`automation.outdoor_lights_off`) to fix backyard lights staying on all day. Root cause: the `Backyard: Motion` automation fired at 06:37 AEST (kitchen door sensor, ~20 minutes before sunrise) while `sun.sun` was still `below_horizon`, turning the lights on — but with the 23:00 nightly turn-off already past, nothing would turn them off again until the next night. The sunrise trigger ensures the outdoor lights are always off by daylight regardless of late-night/near-sunrise motion triggers. Sunrise live test deferred — logged in `VERIFY.md`.
+2. Reduced the lights-off delay in `Garage: Doors Close` (`automation.turn_off_garage_lights_when_both_doors_closed`) from 2 minutes to 10 seconds. Verified live: closing the spare door with the car door already closed turned off the garage lights after ~10 seconds.
