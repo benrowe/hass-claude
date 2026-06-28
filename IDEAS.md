@@ -37,17 +37,3 @@ When both residents leave home, internal lights are often left on. This automati
 - Need to identify the right light targets — likely a `light` domain call scoped to internal areas only
 
 research: whether HA supports a single "all indoor lights" group or if targets need to be enumerated per area
-
-## Auto-open spare garage on motorcycle arrival
-
-When Ben arrives home on the motorcycle, the spare garage door should open automatically — mirroring the `Presence: Ben Arrives Android Auto` pattern but using Bluetooth headset connection as the "riding" signal instead of Android Auto.
-
-The phone exposes `sensor.ben_s_pixel_pro_bluetooth_connection` with a `connected_paired_devices` attribute listing currently-connected devices by MAC + name. The motorcycle headset is `PT EDGE` (`00:0A:9B:D1:BC:22`) — its presence in that list is a reliable proxy for being on the bike.
-
-- Trigger: `person.ben` enters `zone.home`
-- Condition: `00:0A:9B:D1:BC:22 (PT EDGE)` is in the `connected_paired_devices` attribute of `sensor.ben_s_pixel_pro_bluetooth_connection`
-- Action: `cover.open_cover` on `cover.garage_door_spare`, plus a push notification to `notify.mobile_app_ben_s_pixel_pro` confirming the door opened
-- The attribute check can't use a native `condition: state` — best implemented as a Template Helper (binary sensor: `on` when PT EDGE is in the list), then the automation uses a native state condition on the helper
-- No arrival delay needed (open immediately on zone entry, matching the car pattern)
-
-research: whether the Template Helper approach is reliable when the Bluetooth sensor updates on headset connection/disconnection
