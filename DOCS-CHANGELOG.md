@@ -68,3 +68,4 @@ Log of changes to this repo's own files/structure (CLAUDE.md, STATE.md, README.m
 ## 2026-07-01
 
 1. Added `IDEAS.md` entry: kitchen lights auto-off after 1 hour of no motion when the light bar is on (manual override active).
+2. Added `IDEAS.md` entry: context-aware garage door left-open notification — push vs kitchen speaker TTS adapts to who is currently home.
