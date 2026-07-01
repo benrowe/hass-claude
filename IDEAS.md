@@ -37,3 +37,12 @@ When both residents leave home, internal lights are often left on. This automati
 - Need to identify the right light targets — likely a `light` domain call scoped to internal areas only
 
 research: whether HA supports a single "all indoor lights" group or if targets need to be enumerated per area
+
+## Kitchen Lights Auto-Off After 1 Hour No-Motion
+
+When someone manually turns on the kitchen lights, the light bar comes on as a manual override indicator — which suppresses the normal motion-off automations. This means if everyone leaves the kitchen without manually turning the lights off, they stay on indefinitely. This idea adds a safety-net automation: if the kitchen motion sensor has seen no motion for over an hour **and** the light bar is on, turn off all lights in the kitchen area (including the light bar, which clears the override state).
+
+- Trigger: kitchen motion sensor transitions to idle, or a periodic time-based check
+- Condition: motion sensor last changed > 60 minutes ago AND light bar is on
+- Action: turn off all lights in the kitchen area (lights + light bar)
+- Note: turning off the light bar clears the manual override, so if someone re-enters the kitchen after this fires, motion automations will resume normally
