@@ -46,3 +46,23 @@ When someone manually turns on the kitchen lights, the light bar comes on as a m
 - Condition: motion sensor last changed > 60 minutes ago AND light bar is on
 - Action: turn off all lights in the kitchen area (lights + light bar)
 - Note: turning off the light bar clears the manual override, so if someone re-enters the kitchen after this fires, motion automations will resume normally
+
+## Context-Aware Garage Door Left-Open Notification
+
+When the "garage door left open" alert fires, the notification method should adapt based on who is currently home (using `person` entity states):
+
+- **No one home** — push notification to both people
+- **One person home** — push notification to that person + TTS announcement on the kitchen speaker
+- **Both people home** — TTS on the kitchen speaker only (no push)
+
+The motivation is that a speaker announcement is more natural and less disruptive when someone is physically present; when both people are home, a single speaker call is sufficient without doubling up on phone pings.
+
+Key steps:
+
+- Locate the existing garage door left-open automation and identify where the notify action lives
+- Replace the action with a `choose` block that branches on `person` entity states
+- Per-person push: use the existing per-person notify service targets
+- TTS: call `script.announce_speaker` targeting the kitchen media player
+- Holiday mode (`input_boolean.holiday_mode`) implies no one is home — "no one home" branch should also apply there
+
+research: Review the current garage door open notification automation to understand the existing action structure before modifying it
