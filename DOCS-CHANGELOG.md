@@ -64,3 +64,7 @@ Log of changes to this repo's own files/structure (CLAUDE.md, STATE.md, README.m
 ## 2026-06-28
 
 1. Added `IDEAS.md` entry: auto-open spare garage door on motorcycle arrival, triggered by `person.ben` entering `zone.home` while the PT EDGE Bluetooth headset (`sensor.ben_s_pixel_pro_bluetooth_connection`) is connected. Removed from `IDEAS.md` once implemented.
+
+## 2026-07-01
+
+1. Added `IDEAS.md` entry: kitchen lights auto-off after 1 hour of no motion when the light bar is on (manual override active).
