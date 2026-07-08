@@ -54,3 +54,7 @@ Log of changes made to this Home Assistant instance.
 
 1. Fixed conflict between `Alert: Meater Cook Started` and `Alert: Meater Estimated Time Available`: both were firing back-to-back at cook startup because `sensor.meater_probe_time_remaining` transitions from `unavailable` to a value at the same instant the cook state changes to `started`. Added `for: {minutes: 1}` to the existing `state` condition on `sensor.meater_probe_cook_state` in `Alert: Meater Estimated Time Available` — the ETA announcement is now suppressed unless the cook state has already been active for at least 1 minute, ensuring it only fires on genuine mid-cook recalculations rather than at startup.
 2. Updated the TTS message in `Alert: Meater Estimated Time Available` to announce the actual estimated minutes remaining (computed from `sensor.meater_probe_time_remaining`) instead of the generic "Check the app for details" message. Verified live: announcement played correctly with the current cook's remaining time.
+
+## 2026-07-08
+
+1. Fixed `Backyard: Motion Man Cave Active` (`automation.backyard_motion_man_cave_active`): both the turn-on and turn-off actions were targeting `area_id: kitchen`, which included the kitchen light bar and caused the 5-minute auto-off to never fire (the light bar check always found it on because the automation itself had turned it on). Changed both targets to the 4 specific downlights (`light.kitchen_downlight_1`–`4`). Verified live: triggering the automation turned on downlights 1–4 at 30% brightness while the light bar remained off.
