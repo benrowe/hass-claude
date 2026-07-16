@@ -58,3 +58,7 @@ Log of changes made to this Home Assistant instance.
 ## 2026-07-08
 
 1. Fixed `Backyard: Motion Man Cave Active` (`automation.backyard_motion_man_cave_active`): both the turn-on and turn-off actions were targeting `area_id: kitchen`, which included the kitchen light bar and caused the 5-minute auto-off to never fire (the light bar check always found it on because the automation itself had turned it on). Changed both targets to the 4 specific downlights (`light.kitchen_downlight_1`–`4`). Verified live: triggering the automation turned on downlights 1–4 at 30% brightness while the light bar remained off.
+
+## 2026-07-16
+
+1. Created automation `Maintenance: Reload IKEA integrations after startup` (`automation.maintenance_reload_ikea_integrations_after_startup`): on `homeassistant: start`, waits 5 minutes, reloads both IKEA Dirigera hubs (Garage and Man Cave) in parallel, waits 5 seconds, then reloads them again — workaround for devices becoming `unknown` after a reboot. Verified: both `reload_config_entry` service calls succeed and integrations return to `loaded` state.
