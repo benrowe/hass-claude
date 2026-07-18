@@ -62,3 +62,7 @@ Log of changes made to this Home Assistant instance.
 ## 2026-07-16
 
 1. Created automation `Maintenance: Reload IKEA integrations after startup` (`automation.maintenance_reload_ikea_integrations_after_startup`): on `homeassistant: start`, waits 5 minutes, reloads both IKEA Dirigera hubs (Garage and Man Cave) in parallel, waits 5 seconds, then reloads them again — workaround for devices becoming `unknown` after a reboot. Verified: both `reload_config_entry` service calls succeed and integrations return to `loaded` state.
+
+## 2026-07-18
+
+1. Installed Bose integration. Cleaned up 19 entities on the Bose Soundbar 700 — removed duplicate `living_room_` prefix from all entity IDs (e.g., `media_player.living_room_living_room_sound_bar_media_player` → `media_player.living_room_sound_bar`). Renamed the 3 sub-devices (Bass Module, 2× Surround Speakers) to follow the `{Area} {Fixture}` naming convention (`Living Room Bass Module`, `Living Room Surround Speaker 1`, `Living Room Surround Speaker 2`) and assigned all 3 to the `living_room` area. Added `media_player.living_room_sound_bar` to the Living Room section of the `house-state/living` dashboard using the same `custom:mini-media-player` card style as the existing TV card.
